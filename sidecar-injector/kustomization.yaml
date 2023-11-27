@@ -1,0 +1,7 @@
+kind: Kustomization
+
+resources:
+- injector-service.yaml
+- injector-rbac.yaml
+- injector-mutating-webhook.yaml
+- agent-sidecar-injector.yaml

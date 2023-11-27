@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-agent-injector
+  namespace: vault
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vault-agent-injector
+  template:
+    metadata:
+      labels:
+        app: vault-agent-injector
+    spec:
+      serviceAccountName: vault-agent-injector
+      containers:
+      - name: vault-agent-injector
+        image: docker.io/hashicorp/vault-k8s:latest
+        args:
+          - agent-inject
+          - 2>&1
+        env:
+        - name: VAULT_ADDR
+          value: "http://127.0.0.1:8200"
+  
