@@ -1,0 +1,3 @@
+resources:
+- https://github.com/redhat-cop/vault-config-operator/raw/main/config/crd/kustomization.yaml
+#https://github.com/redhat-cop/vault-config-operator/blob/main/readme.md#deploying-from-operatorhub
